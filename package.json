@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "./dist/main.js",
   "scripts": {
-    "dev:electron": "cross-env NODE_ENV=development webpack --config webpack.electron.config.js --mode development && electron ."
+    "dev:electron": "cross-env NODE_ENV=development webpack --config webpack.electron.config.js --mode development && electron .",
+    "dev:react": "cross-env NODE_ENV=development webpack serve --config webpack.react.config.js --mode development"
   },
   "license": "MIT",
   "devDependencies": {
@@ -14,8 +15,15 @@
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "electron": "^10.1.5",
-    "webpack": "^5.4.0",
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "^4.0.0",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
