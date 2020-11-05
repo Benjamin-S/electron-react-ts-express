@@ -5,7 +5,9 @@
   "scripts": {
     "dev:electron": "cross-env NODE_ENV=development webpack --config webpack.electron.config.js --mode development && electron .",
     "dev:express": "cross-env NODE_ENV=development webpack --config webpack.express.config.js --mode development",
-    "dev:react": "cross-env NODE_ENV=development webpack serve --config webpack.react.config.js --mode development"
+		"dev:react": "cross-env NODE_ENV=development webpack serve --config webpack.react.config.js --mode development",
+		"lint": "xo",
+    "test": "yarn lint"
   },
   "license": "MIT",
   "devDependencies": {
@@ -20,7 +22,8 @@
     "html-webpack-plugin": "^4.5.0",
     "webpack": "^4.0.0",
     "webpack-cli": "^4.1.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "xo": "^0.34.2"
   },
   "dependencies": {
     "@types/react": "^16.9.55",
@@ -28,5 +31,16 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
-  "homepage": "."
+	"homepage": ".",
+	"xo": {
+		"envs": [
+			"node",
+			"browser"
+		],
+		"rules": {
+			"import/no-anonymous-default-export": "off",
+			"@typescript-eslint/no-floating-promises": "off",
+			"@typescript-eslint/no-loop-func": "off"
+		}
+	}
 }

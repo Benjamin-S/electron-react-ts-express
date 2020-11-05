@@ -1,8 +1,8 @@
-const express = require('express')
-const app = express()
+/*  eslint-disable @typescript-eslint/no-var-requires */
+const express = require('express');
+const app = express();
 const port = 3000;
 
-
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+	console.log(`Example app listening at http://localhost:${port}`);
 });
