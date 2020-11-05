@@ -7,7 +7,7 @@ document.body.appendChild(mainElement);
 const App = () => {
   return (
     <div>
-      <h1>Hi from a react app</h1>);
+      <h1>React Rendering</h1>);
     </div>
   );
 };

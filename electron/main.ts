@@ -32,6 +32,11 @@ function createWindow() {
         }))
         mainWindow.loadURL(`http://localhost:4000`);
     } else {
+        serverWindow.loadURL(url.format({
+            pathname: path.join(__dirname, './server/index.html'),
+            protocol: 'file:',
+            slashes: false
+        }))
         mainWindow.loadURL(
             url.format({
                 pathname: path.join(__dirname, '../index.html'),
@@ -41,23 +46,14 @@ function createWindow() {
         );
     }
 
-    let contents = serverWindow.webContents
-    console.log(contents)
-
-    contents.on('did-fail-load', (errorCode , errorDescription, validatedURL) => {
-        console.log('Loading failed');
-        console.log(errorCode);
-        console.log(errorDescription);
-        console.log(validatedURL);
-    })
-
     serverWindow.on('closed', () => {
         serverWindow = null;
     });
 
-    // mainWindow.on('closed', () => {
-    //     mainWindow = null;
-    // });
+    mainWindow.on('closed', () => {
+        mainWindow = null;
+        serverWindow = null;
+    });
 }
 
 app.on('ready', createWindow);
