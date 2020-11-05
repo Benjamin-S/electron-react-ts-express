@@ -7,6 +7,9 @@ module.exports = {
   devtool: 'source-map',
   entry: './electron/main.ts',
   target: 'electron-main',
+  node: {
+      __dirname: false
+  },
   module: {
     rules: [
       {
